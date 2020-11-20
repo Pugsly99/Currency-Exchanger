@@ -1,6 +1,17 @@
+body {
+  background-image: url("./../assets/img/piggyback.jpg");
+  background-position: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: black;
+}
+
 .container {
   text-align: center;
   margin-top: 150px;
+  font-size: xx-large;
+  margin-right: 50%;
 }
 
 .row {
