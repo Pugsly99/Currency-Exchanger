@@ -10,8 +10,7 @@ import Exchanger from './services/exchanger';
 
 $(document).ready(function() {
   $('#exchangeUsd').click(function() {
-    let usd = $('#exchange').val();
-    usd;
+    const usd = $('#exchange').val();
     let selectedCurrency = $('#exchangedTo').val();
     if (selectedCurrency === "EUR"){
       Exchanger.getValue()
@@ -20,7 +19,9 @@ $(document).ready(function() {
             throw Error(`Currency API error: ${exchangerResponse.message}`);
           }
           const exchanged = exchangerResponse.conversion_rates.EUR;
-          console.log(exchanged);
+          let outcome = usd * exchanged;
+          $("#outcome").text(outcome);
+          $("#outcome").append(" EUR");
         });
     }  else if (selectedCurrency === "RUB"){
       Exchanger.getValue()
@@ -29,7 +30,9 @@ $(document).ready(function() {
             throw Error(`Currency API error: ${exchangerResponse.message}`);
           }
           const exchanged = exchangerResponse.conversion_rates.RUB;
-          console.log(exchanged);
+          let outcome = usd * exchanged;
+          $("#outcome").text(outcome);
+          $("#outcome").append(" RUB");
         });
     } else if (selectedCurrency === "CAD"){
       Exchanger.getValue()
@@ -38,7 +41,9 @@ $(document).ready(function() {
             throw Error(`Currency API error: ${exchangerResponse.message}`);
           }
           const exchanged = exchangerResponse.conversion_rates.CAD;
-          console.log(exchanged);
+          let outcome = usd * exchanged;
+          $("#outcome").text(outcome);
+          $("#outcome").append(" CAD");
         });
     } else if (selectedCurrency === "AED"){
       Exchanger.getValue()
@@ -47,7 +52,9 @@ $(document).ready(function() {
             throw Error(`Currency API error: ${exchangerResponse.message}`);
           }
           const exchanged = exchangerResponse.conversion_rates.AED;
-          console.log(exchanged);
+          let outcome = usd * exchanged;
+          $("#outcome").text(outcome);
+          $("#outcome").append(" AED");
         });
     } else if (selectedCurrency === "ARS"){
       Exchanger.getValue()
@@ -56,16 +63,20 @@ $(document).ready(function() {
             throw Error(`Currency API error: ${exchangerResponse.message}`);
           }
           const exchanged = exchangerResponse.conversion_rates.ARS;
-          console.log(exchanged);
+          let outcome = usd * exchanged;
+          $("#outcome").text(outcome);
+          $("#outcome").append(" ARS");
         });
-    }  else if (selectedCurrency === "AUD"){
+    } else if (selectedCurrency === "AUD"){
       Exchanger.getValue()
         .then(function(exchangerResponse) {
           if (exchangerResponse instanceof Error) {
             throw Error(`Currency API error: ${exchangerResponse.message}`);
           }
           const exchanged = exchangerResponse.conversion_rates.AUD;
-          console.log(exchanged);
+          let outcome = usd * exchanged;
+          $("#outcome").text(outcome);
+          $("#outcome").append(" AUD");
         });
     } else if (selectedCurrency === "BGN"){
       Exchanger.getValue()
@@ -74,7 +85,9 @@ $(document).ready(function() {
             throw Error(`Currency API error: ${exchangerResponse.message}`);
           }
           const exchanged = exchangerResponse.conversion_rates.BGN;
-          console.log(exchanged);
+          let outcome = usd * exchanged;
+          $("#outcome").text(outcome);
+          $("#outcome").append(" BGN");
         });
     } else if (selectedCurrency === "BRL"){
       Exchanger.getValue()
@@ -83,7 +96,9 @@ $(document).ready(function() {
             throw Error(`Currency API error: ${exchangerResponse.message}`);
           }
           const exchanged = exchangerResponse.conversion_rates.BRL;
-          console.log(exchanged);
+          let outcome = usd * exchanged;
+          $("#outcome").text(outcome);
+          $("#outcome").append(" BRL");
         });
     } else if (selectedCurrency === "BSD"){
       Exchanger.getValue()
@@ -92,8 +107,23 @@ $(document).ready(function() {
             throw Error(`Currency API error: ${exchangerResponse.message}`);
           }
           const exchanged = exchangerResponse.conversion_rates.BSD;
-          console.log(exchanged);
+          let outcome = usd * exchanged;
+          $("#outcome").text(outcome);
+          $("#outcome").append(" BSD");
         });
+    } else if (selectedCurrency === "USD"){
+      Exchanger.getValue()
+        .then(function(exchangerResponse) {
+          if (exchangerResponse instanceof Error) {
+            throw Error(`Currency API error: ${exchangerResponse.message}`);
+          }
+          const exchanged = exchangerResponse.conversion_rates.USD;
+          let outcome = usd * exchanged;
+          $("#outcome").text(outcome);
+          $("#outcome").append(" RUB");
+        });
+    } else {
+      alert(`${selectedCurrency} is not a supported currency`);
     }
     
   });
