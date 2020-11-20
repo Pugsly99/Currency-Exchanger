@@ -1,6 +1,6 @@
 export default class Exchanger {
-  static async getValue(currency) {
-    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.GIPHY_API_KEY}/latest/${currency}`)
+  static async getValue() {
+    return fetch(`https://v6.exchangerate-api.com/v6//latest/USD`)
     .then(function(response) {
       if (!response.ok) {
         throw Error(response.status);
