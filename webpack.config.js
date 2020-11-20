@@ -15,7 +15,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Memory Game',
+      title: 'currency exchanger',
       template: './src/index.html',
       inject: 'body'
     })
