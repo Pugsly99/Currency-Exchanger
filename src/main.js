@@ -5,7 +5,9 @@ import './css/styles.css';
 import Exchanger from './services/exchanger';
 
 
+function newCurrency(exchanged, usd, selectedCurrency) {
 
+}
 
 
 $(document).ready(function() {
@@ -23,7 +25,7 @@ $(document).ready(function() {
           $("#outcome").text(outcome);
           $("#outcome").append(" EUR");
         });
-    }  else if (selectedCurrency === "RUB"){
+    } else if (selectedCurrency === "RUB"){
       Exchanger.getValue()
         .then(function(exchangerResponse) {
           if (exchangerResponse instanceof Error) {
