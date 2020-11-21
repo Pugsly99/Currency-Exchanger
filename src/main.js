@@ -113,7 +113,7 @@ function showRates() {
       if (exchangerResponse instanceof Error) {
         throw Error(`Currency API error: ${exchangerResponse.message}`);
       }
-      const money1 = exchangerResponse.conversion_rates.EUR;
+      const money1 = exchangerResponse.conversion_rates.RUB;
       $("#money1").text(` RUB= ${money1}`);
       const money2 = exchangerResponse.conversion_rates.EUR;
       $("#money2").text(` EUR= ${money2}`);

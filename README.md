@@ -38,7 +38,7 @@
 | Behavior | Input | Output |
 |-------------------------------------------------|--------|--------|
 | Allow for user to input their USD amount | 1000 USD | 1000 USD|
-| Allow for user to type their desired currency to convert to | EUR | EUR |
+| Allow for user to type their desired currency to convert too | EUR | EUR |
 | On button click convert currency | 1000 USD | 844 EUR|
 
 
