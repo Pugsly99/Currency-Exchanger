@@ -107,8 +107,37 @@ function checkCurrency(selectedCurrency, usd) {
   }
 }
 
+function showRates() {
+  Exchanger.getValue()
+    .then(function(exchangerResponse) {
+      if (exchangerResponse instanceof Error) {
+        throw Error(`Currency API error: ${exchangerResponse.message}`);
+      }
+      const money1 = exchangerResponse.conversion_rates.EUR;
+      $("#money1").text(` RUB= ${money1}`);
+      const money2 = exchangerResponse.conversion_rates.EUR;
+      $("#money2").text(` EUR= ${money2}`);
+      const money3 = exchangerResponse.conversion_rates.CAD;
+      $("#money3").text(` CAD= ${money3}`);
+      const money4 = exchangerResponse.conversion_rates.AED;
+      $("#money4").text(` AED= ${money4}`);
+      const money5 = exchangerResponse.conversion_rates.ARS;
+      $("#money5").text(` ARS= ${money5}`);
+      const money6 = exchangerResponse.conversion_rates.AUD;
+      $("#money6").text(` AUD= ${money6}`);
+      const money7 = exchangerResponse.conversion_rates.BGN;
+      $("#money7").text(` BGN= ${money7}`);
+      const money8 = exchangerResponse.conversion_rates.BRL;
+      $("#money8").text(` BRL= ${money8}`);
+      const money9 = exchangerResponse.conversion_rates.BSD;
+      $("#money9").text(` BSD= ${money9}`);
+      const money10 = exchangerResponse.conversion_rates.USD;
+      $("#money10").text(` USD= ${money10}`);
+    });
+}
 
 $(document).ready(function() {
+  showRates();
   $('#exchangeUsd').click(function() {
     const usd = $('#exchange').val();
     let selectedCurrency = $('#exchangedTo').val();
